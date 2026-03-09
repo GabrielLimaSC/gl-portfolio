@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+  /* Fonts */
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-vt: 'VT323', monospace;
+
+  /* World Colors */
+  --sky:     #c8e6ff;
+  --grass:   #7ec850;
+  --grass2:  #5aa832;
+  --dirt:    #c8956c;
+
+  /* window colors */
+  --win-bg:      #fef9f0;
+  --win-border:  #5a3e2b;
+  --win-title:   #7ec850;
+  --win-title2:  #5aa832;
+
+  /* Pastel colors */
+  --cream:    #fef9f0;
+  --peach:    #ffd6a5;
+  --pink:     #ffb3c6;
+  --lavender: #d4b8f0;
+  --mint:     #b8f0d4;
+  --yellow:   #fff3a5;
+  --blue:     #a5d4ff;
+
+  /* Text */
+  --text-dark:  #3a2a1a;
+  --text-mid:   #7a6a5a;
+  --text-light: #baaA9a;
+
+  /* Buttons */
+  --btn-red:    #ff6b6b;
+  --btn-yellow: #ffd93d;
+  --btn-green:  #6bcb77;
+  --shadow:     #3a2a1a;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  image-rendering: pixelated;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-pixel);
+  background: var(--sky);
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--peach); border: 2px solid var(--win-border); }
+::-webkit-scrollbar-thumb { background: var(--win-title); border: 1px solid var(--win-border); }
