@@ -10,3 +10,13 @@ export interface WindowState {
   position: { x: number; y: number }
   defaultPosition: { x: number; y: number }
 }
+
+// TO DO: useTimeOfDay
+export type TimePhase = 'dawn' | 'morning' | 'afternoon' | 'dusk' | 'night'
+
+export interface TimeOfDay {
+  isDaytime: boolean
+  phase: TimePhase
+  celestialX: number
+  celestialY: number
+}

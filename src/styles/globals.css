@@ -1,41 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
 
 :root {
-  /* Fonts */
   --font-pixel: 'Press Start 2P', monospace;
   --font-vt: 'VT323', monospace;
 
-  /* World Colors */
-  --sky:     #c8e6ff;
-  --grass:   #7ec850;
-  --grass2:  #5aa832;
-  --dirt:    #c8956c;
+  /* Night */
+  --sky:    #0d0a1e;
+  --grass:  #1a3a1a;
+  --grass2: #0d2010;
+  --dirt:   #1a0f08;
 
-  /* window colors */
-  --win-bg:      #fef9f0;
-  --win-border:  #5a3e2b;
-  --win-title:   #7ec850;
-  --win-title2:  #5aa832;
+  /* Windows */
+  --win-bg:     #12101e;
+  --win-border: #7c5cbf;
+  --win-title:  #2d1b5e;
+  --win-title2: #1a0f38;
 
-  /* Pastel colors */
-  --cream:    #fef9f0;
-  --peach:    #ffd6a5;
-  --pink:     #ffb3c6;
-  --lavender: #d4b8f0;
-  --mint:     #b8f0d4;
-  --yellow:   #fff3a5;
-  --blue:     #a5d4ff;
+  /* UI */
+  --cream:    #1e1a2e;
+  --peach:    #2a1f3a;
+  --lavender: #3d2b6e;
+  --mint:     #0f2e2e;
+  --yellow:   #2e2510;
+  --blue:     #0f1e3a;
 
-  /* Text */
-  --text-dark:  #3a2a1a;
-  --text-mid:   #7a6a5a;
-  --text-light: #baaA9a;
+  /* Texts */
+  --text-dark:  #e8d8ff;
+  --text-mid:   #9a8ab8;
+  --text-light: #4a3a5a;
+  --shadow:     #000000;
 
   /* Buttons */
-  --btn-red:    #ff6b6b;
-  --btn-yellow: #ffd93d;
-  --btn-green:  #6bcb77;
-  --shadow:     #3a2a1a;
+  --btn-red:    #c0392b;
+  --btn-yellow: #d4a017;
+  --btn-purple: #7c5cbf;
+  --btn-teal:   #1a7a6a;
 }
 
 *, *::before, *::after {
@@ -51,8 +50,9 @@ html, body {
   overflow: hidden;
   font-family: var(--font-pixel);
   background: var(--sky);
+  color: var(--text-dark);
 }
 
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--peach); border: 2px solid var(--win-border); }
-::-webkit-scrollbar-thumb { background: var(--win-title); border: 1px solid var(--win-border); }
+::-webkit-scrollbar-thumb { background: var(--btn-purple); border: 1px solid var(--win-border); }
