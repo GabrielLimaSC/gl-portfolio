@@ -1,4 +1,5 @@
 import Desktop from './components/Desktop/Desktop'
+import Taskbar from './components/Taskbar/Taskbar'
 import Window from './components/Window/Window'
 import DesktopIcon from './components/DesktopIcon/DesktopIcon'
 
@@ -16,6 +17,8 @@ const App = () => {
       <Window id="portfolio">
         <p>Portfolio aqui</p>
       </Window>
+
+      <Taskbar />
     </>
   )
 }
