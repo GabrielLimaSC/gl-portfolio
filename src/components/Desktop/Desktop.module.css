@@ -1,0 +1,202 @@
+.desktop {
+  width: 100%;
+  height: calc(100% - 38px);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle 1px at 8%  12%, #fff 100%, transparent 100%),
+    radial-gradient(circle 1px at 23% 8%,  #fff 100%, transparent 100%),
+    radial-gradient(circle 1px at 38% 6%,  #fff 100%, transparent 100%),
+    radial-gradient(circle 1px at 52% 9%,  #fff 100%, transparent 100%),
+    radial-gradient(circle 1px at 67% 14%, #fff 100%, transparent 100%),
+    radial-gradient(circle 1px at 73% 5%,  #fff 100%, transparent 100%),
+    radial-gradient(circle 1px at 85% 10%, #fff 100%, transparent 100%),
+    radial-gradient(circle 2px at 20% 15%, rgba(255,255,220,.9) 100%, transparent 100%),
+    radial-gradient(circle 2px at 55% 11%, rgba(255,255,220,.8) 100%, transparent 100%),
+    radial-gradient(circle 2px at 76% 18%, rgba(255,255,220,.9) 100%, transparent 100%),
+    linear-gradient(180deg, #060412 0%, #0d0a1e 40%, #160f2a 70%, #1a1230 100%);
+}
+
+/* STARS */
+.star {
+  position: absolute;
+  background: #fff;
+  animation: twinkle 3s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 1;  transform: scale(1);   }
+  50%       { opacity: .2; transform: scale(0.5); }
+}
+
+/* ── MOON ── */
+.moon {
+  position: absolute;
+  top: 20px; right: 70px;
+  width: 40px; height: 40px;
+  background: #f0e8c0;
+  border: 3px solid #d4c88a;
+  box-shadow:
+    0 0 0 3px rgba(240,232,192,.2),
+    0 0 20px rgba(240,232,192,.15),
+    0 0 40px rgba(240,232,192,.08);
+  animation: moonGlow 4s ease-in-out infinite;
+}
+@keyframes moonGlow {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(240,232,192,.2), 0 0 20px rgba(240,232,192,.15), 0 0 40px rgba(240,232,192,.08); }
+  50%       { box-shadow: 0 0 0 4px rgba(240,232,192,.3), 0 0 28px rgba(240,232,192,.25), 0 0 56px rgba(240,232,192,.12); }
+}
+.moon::before {
+  content: '';
+  position: absolute;
+  width: 8px; height: 8px;
+  background: #d8cc98;
+  border: 1px solid #c4b878;
+  top: 6px; left: 8px;
+}
+.moon::after {
+  content: '';
+  position: absolute;
+  width: 5px; height: 5px;
+  background: #d8cc98;
+  border: 1px solid #c4b878;
+  bottom: 8px; right: 6px;
+}
+
+.moonlight {
+  position: absolute;
+  width: 120px; height: 200px;
+  top: 55px; right: 60px;
+  background: linear-gradient(180deg, rgba(240,232,192,.06) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* ── BAT ── */
+.bat {
+  position: absolute;
+  font-size: 16px;
+  animation: batFly 12s linear infinite;
+}
+@keyframes batFly {
+  0%   { left: 110%; top: 20%; transform: scaleX(-1); }
+  49%  { left: -60px; top: 12%; transform: scaleX(-1); }
+  50%  { left: -60px; top: 12%; transform: scaleX(1);  }
+  100% { left: 110%;  top: 18%; transform: scaleX(1);  }
+}
+
+/* ── TREES ── */
+.tree {
+  position: absolute;
+  bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: treeSway 5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+@keyframes treeSway {
+  0%, 100% { transform: rotate(0deg);    }
+  50%       { transform: rotate(1.2deg); }
+}
+
+.treeLeft1  { left: 4%; }
+.treeLeft2  { left: 7%;  animation-delay: .8s; }
+.treeRight1 { right: 5%; }
+.treeRight2 { right: 9%; animation-delay: 1.2s; }
+
+.treeTop {
+  width: 0; height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 30px solid #0a1a0a;
+  filter: drop-shadow(0 -2px 0 #0d200d);
+}
+.treeTop2 {
+  margin-top: -10px;
+  width: 0; height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 24px solid #0d200d;
+}
+.treeTrunk {
+  width: 10px; height: 20px;
+  background: #1a0f08;
+  border: 2px solid #0d0804;
+}
+
+/* ── HOUSE ── */
+.house {
+  position: absolute;
+  bottom: 56px;
+  right: 14%;
+}
+.houseRoof {
+  width: 0; height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 24px solid #1a0f0f;
+  margin-bottom: -3px;
+  filter: drop-shadow(0 -2px 0 #0d0808);
+}
+.houseBody {
+  width: 52px; height: 38px;
+  background: #1a1510;
+  border: 3px solid #2a2018;
+  position: relative;
+}
+.houseWindow {
+  width: 12px; height: 12px;
+  background: #ffd060;
+  border: 2px solid #e8b840;
+  position: absolute;
+  top: 6px;
+  box-shadow: 0 0 6px rgba(255,208,96,.8), 0 0 12px rgba(255,208,96,.4);
+  animation: windowFlicker 6s ease-in-out infinite;
+}
+@keyframes windowFlicker {
+  0%,100% { background: #ffd060; box-shadow: 0 0 6px rgba(255,208,96,.8),  0 0 12px rgba(255,208,96,.4);  }
+  30%      { background: #ffda80; box-shadow: 0 0 8px rgba(255,218,128,.9), 0 0 16px rgba(255,218,128,.5); }
+  70%      { background: #f0c040; box-shadow: 0 0 5px rgba(240,192,64,.7),  0 0 10px rgba(240,192,64,.3);  }
+}
+.houseWindowLeft  { left: 4px; }
+.houseWindowRight { right: 4px; }
+.houseDoor {
+  width: 12px; height: 16px;
+  background: #0d0804;
+  border: 2px solid #1a1008;
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── GROUND ── */
+.ground {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 56px;
+}
+.groundGrass {
+  height: 18px;
+  background: var(--grass);
+  border-top: 4px solid var(--grass2);
+  position: relative;
+}
+.groundGrass::before {
+  content: '';
+  position: absolute;
+  top: -8px; left: 0; right: 0; height: 8px;
+  background: repeating-linear-gradient(90deg,
+    transparent 0, transparent 12px,
+    var(--grass) 12px, var(--grass) 14px,
+    transparent 14px, transparent 20px,
+    var(--grass) 20px, var(--grass) 22px,
+    transparent 22px, transparent 28px
+  );
+}
+.groundDirt {
+  height: 34px;
+  background: var(--dirt);
+  background-image: repeating-linear-gradient(90deg,
+    rgba(255,255,255,.02) 0, rgba(255,255,255,.02) 2px,
+    transparent 2px, transparent 16px
+  );
+}
