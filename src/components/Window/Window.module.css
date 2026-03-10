@@ -1,0 +1,92 @@
+.window {
+  position: fixed;
+  background: var(--win-bg);
+  border: 3px solid var(--win-border);
+  box-shadow: 5px 5px 0 var(--shadow);
+  min-width: 320px;
+  z-index: 100;
+  transform-origin: top center;
+}
+
+.focused {
+  z-index: 200;
+  box-shadow: 6px 6px 0 var(--shadow);
+}
+
+.opening {
+  animation: winOpen 0.2s steps(4) forwards;
+}
+
+.closing {
+  animation: winClose 0.15s steps(3) forwards;
+}
+
+@keyframes winOpen {
+  0%   { transform: scale(0.1) translateY(-20px); opacity: 0; }
+  50%  { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes winClose {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.05) translateY(-30px); opacity: 0; }
+}
+
+/* Title Bar */
+.titlebar {
+  background: var(--win-title);
+  border-bottom: 3px solid var(--win-title2);
+  padding: 0 6px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: grab;
+  user-select: none;
+}
+
+.titlebar:active { cursor: grabbing; }
+
+.title {
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.btn {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  font-size: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: var(--font-pixel);
+  transition: transform 0.05s, filter 0.1s;
+  background: transparent;
+}
+
+.btn:hover  { transform: scale(1.2); filter: brightness(1.2); }
+.btn:active { transform: scale(0.9); }
+
+.minimize { background: var(--btn-yellow); }
+.close    { background: var(--btn-red); }
+
+/* Body */
+.body {
+  padding: 12px;
+  overflow-y: auto;
+  max-height: 460px;
+}
+
+.body::-webkit-scrollbar       { width: 8px; }
+.body::-webkit-scrollbar-track { background: var(--peach); border: 2px solid var(--win-border); }
+.body::-webkit-scrollbar-thumb { background: var(--win-title); border: 1px solid var(--win-border); }
