@@ -1,22 +1,22 @@
+import Desktop from './components/Desktop/Desktop'
 import Window from './components/Window/Window'
-import { useWindowStore } from './store/windowStore'
+import DesktopIcon from './components/DesktopIcon/DesktopIcon'
 
 const App = () => {
-  const { openWindow } = useWindowStore()
-
   return (
-    <div>
-      <button onClick={() => openWindow('auth')}>Abrir Auth</button>
-      <button onClick={() => openWindow('portfolio')}>Abrir Portfolio</button>
+    <>
+      <Desktop />
+
+      <DesktopIcon id="auth"      label={"JWT_AUTH"}  emoji="🔑" position={{ x: 30,  y: 28 }} />
+      <DesktopIcon id="portfolio" label={"PORTFOLIO"} emoji="📁" position={{ x: 116, y: 28 }} />
 
       <Window id="auth">
-        <p>Conteúdo do Auth aqui</p>
+        <p>Auth aqui</p>
       </Window>
-
       <Window id="portfolio">
-        <p>Conteúdo do Portfolio aqui</p>
+        <p>Portfolio aqui</p>
       </Window>
-    </div>
+    </>
   )
 }
 
