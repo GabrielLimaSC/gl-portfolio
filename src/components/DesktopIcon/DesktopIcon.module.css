@@ -1,0 +1,65 @@
+.icon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  width: 72px;
+  text-align: center;
+  user-select: none;
+  transition: transform 0.1s;
+}
+
+.icon:hover { transform: translateY(-4px); }
+.icon:hover .sprite { animation: bounce 0.4s steps(2) infinite; }
+.icon:active { transform: scale(0.9); }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+
+.sprite {
+  width: 48px;
+  height: 48px;
+  background: var(--win-bg);
+  border: 3px solid var(--win-border);
+  box-shadow: 3px 3px 0 var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: box-shadow 0.1s;
+}
+
+/* icon title bar */
+.sprite::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 8px;
+  background: var(--win-title);
+  border-bottom: 2px solid var(--win-title2);
+}
+
+.icon:hover .sprite {
+  box-shadow: 4px 4px 0 var(--shadow), inset 0 0 0 2px var(--btn-yellow);
+}
+
+.emoji {
+  font-size: 22px;
+  image-rendering: pixelated;
+}
+
+.label {
+  font-family: var(--font-pixel);
+  font-size: 5px;
+  color: var(--text-dark);
+  text-shadow: 1px 1px 0 #000;
+  line-height: 1.5;
+  background: rgba(13, 10, 30, 0.8);
+  padding: 1px 3px;
+  white-space: pre-line;
+}
